@@ -1,0 +1,73 @@
+create DATABASE duombaziene;
+create table Persons (person_id SMALLINT auto_increment primary key);
+SELECT * FROM `persons`
+insert into Persons(person_id) values (name, lastname, birth_date)
+insert into Persons(person_id) values ('name', 'lastname', 'birth_date')
+drop table persons;
+create table Persons (person_id SMALLINT auto_increment primary key, name varchar(255), lastname varchar(255), birth_date varchar(255));
+SELECT * FROM `persons`
+SELECT * FROM `persons`
+create table Identities(identity_id SMALLINT auto_increment primary key, identity_code int, person_id int, foreign key (person_id) references Persons(person_id));
+create table Identities(identity_id SMALLINT auto_increment primary key, identity_code int, person_id int, foreign key Identities(person_id) references Persons(person_id));
+create table Identities(identity_id SMALLINT auto_increment primary key, identity_code int, person_id int, foreign key (persons_id) references Persons(persons_id));
+create table Identities(identity_id SMALLINT auto_increment primary key, identity_code int, person_id smallint, foreign key (person_id) references Persons(person_id));
+SELECT * FROM `identities`
+SELECT * FROM `persons`
+SELECT * FROM `identities`
+describe
+describe Persons;
+describe Identities;
+SELECT * FROM `identities`
+SELECT * FROM `persons`
+insert into persons(person_id, name, lastname) values (1, Petras, Petronis);
+insert into persons(person_id, name, lastname) values (1, 'Petras', 'Petronis');
+insert into persons(person_id, name, lastname) values (2, 'Audrius', 'Audronis');
+insert into persons(person_id, name, lastname) values (3, 'Matas', 'Matauskas');
+SELECT * FROM `persons`
+insert into identities(identity_id, identity_code, person_id) values (1, 23423423647, 3);
+insert into identities(identity_id, identity_code, person_id) values (2, 234234247827, 1);
+insert into identities(identity_id, identity_code, person_id) values (3, 788324247827, 2);
+insert into identities(identity_id, identity_code, person_id) values (4, 123324247827, 4);
+SELECT * FROM `identities`
+describe persons;
+describe identities;
+SELECT * FROM `identities`
+create table Country(id SMALLINT auto_increment primary key, name varchar(255));
+create table Cities(city-id SMALLINT auto_increment primary key, title varchar(255), country-id smallint auto_increment foreign key);
+create table Cities(city_id SMALLINT auto_increment primary key, title varchar(255), country_id smallint auto_increment foreign key);
+create table Cities(city_id SMALLINT auto_increment primary key, title varchar(255), country_id smallint foreign key);
+create table Cities(city_id SMALLINT auto_increment primary key, title varchar(255), country_id smallint foreign key);
+create table Cities(city_id SMALLINT auto_increment primary key, title varchar(255), country_id smallint unsigned foreign key);
+create table Cities(city_id SMALLINT auto_increment primary key(id), title varchar(255), country_id smallint foreign key(id) references Country(id);
+CREATE TABLE Cities ( city_id SMALLINT AUTO_INCREMENT PRIMARY KEY, title VARCHAR(255), country_id SMALLINT, FOREIGN KEY (country_id) REFERENCES Country(id) );
+SELECT * FROM `country`
+SELECT * FROM `cities`
+describe country;
+describe cities;
+insert into Country(id, name) values (1, Lietuva);
+insert into Country(id, name) values (1, 'Lietuva');
+insert into Country(id, name) values (2, 'Latvija');
+insert into Country(id, name) values (3, 'Estija');
+insert into Cities(title) values ('Kaunas');
+insert into Cities(title) values ('Riga');
+insert into Cities(title) values ('Talinas');
+insert into Cities(title) values ('Jelgava');
+insert into Cities(title) values ('Vilnius');
+insert into Cities(title) values ('Tartu');
+describe country;
+describe cities;
+SELECT * FROM `country`
+SELECT * FROM `identities`
+SELECT * FROM `cities`
+SELECT * FROM `country`
+create table Books(book_id SMALLINT auto_increment primary key, title varchar(255), price smallint, year smallint, pages smallint);
+create table Authors(author_id SMALLINT auto_increment primary key, first_name varchar(255), last_name varchar(255) gender varchar(255) country varchar(255));
+create table Authors(author_id SMALLINT auto_increment primary key, first_name varchar(255), last_name varchar(255), gender varchar(255, country varchar(255));
+create table Authors(author_id SMALLINT auto_increment primary key, first_name varchar(255), last_name varchar(255), gender varchar(255), country varchar(255));
+CREATE TABLE Junction ( junction_id SMALLINT AUTO_INCREMENT PRIMARY KEY, book_id SMALLINT, author_id SMALLINT, FOREIGN KEY (book_id) REFERENCES Book(book_id), FOREIGN KEY (author_id) REFERENCES Author(author_id) );
+SELECT * FROM `cities`
+SELECT * FROM `authors`
+CREATE TABLE Junction ( junction_id SMALLINT AUTO_INCREMENT PRIMARY KEY, book_id SMALLINT, author_id SMALLINT, FOREIGN KEY(book_id) REFERENCES Book(book_id), FOREIGN KEY(author_id) REFERENCES Author(author_id) );
+SELECT * FROM `books`
+CREATE TABLE Junction ( junction_id SMALLINT AUTO_INCREMENT PRIMARY KEY, book_id SMALLINT, author_id SMALLINT, FOREIGN KEY(book_id) REFERENCES Books(book_id), FOREIGN KEY(author_id) REFERENCES Authors(author_id) );
+SELECT * FROM `persons`
